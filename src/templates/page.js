@@ -1,28 +1,14 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
-
+import React from "react";
 import Hero from "../components/hero";
 import CTA from "../components/cta";
-
-import GraphQLErrorList from "../components/graphql-error-list";
+import CTAColumns from "../components/cta-columns";
+import ImageGrid from "../components/imageGrid"
 import Layout from "../containers/layout";
-
-export const query = graphql`
-  query PageTemplateQuery($id: String!) {
-    route: sanityRoute(id: { eq: $id }) {
-      slug {
-        current
-      }
-      page {
-        ...PageInfo
-      }
-    }
-  }
-`;
+import SEO from "../components/seo";
+import FullWidthImage from "../components/fullWidthImage";
 
 const Page = props => {
   const { data, errors } = props;
-  console.log(data)
 
   if (errors) {
     return (
@@ -32,19 +18,36 @@ const Page = props => {
     );
   }
 
-  const page = data.page || data.route.page;
+  const site = (data || {}).site;
+
+  if (!site) {
+    throw new Error(
+      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+    );
+  }
+
+  const page = data.page;
+  const pageTitle = page.title;
 
   const content = (page._rawContent || [])
     .filter(c => !c.disabled)
     .map((c, i) => {
       let el = null;
       switch (c._type) {
-      
         case "hero":
           el = <Hero key={c._key} {...c} />;
           break;
         case "cta":
           el = <CTA key={c._key} {...c} />;
+          break;
+        case "ctaColumns":
+          el = <CTAColumns key={c._key} {...c} />;
+          break;
+        case "imageGrid":
+          el = <ImageGrid key={c._key} {...c} />;
+          break;
+        case "fullWidthImage":
+          el = <FullWidthImage key={c._key} {...c} />;
           break;
         default:
           el = null;
@@ -54,7 +57,15 @@ const Page = props => {
 
   return (
     <Layout textWhite={true}>
-      <div className="pt-24">{content}</div>
+      <SEO
+        title={pageTitle}
+        description={site.description}
+        keywords={site.keywords}
+        bodyAttr={{
+          class: "leading-normal tracking-normal text-white gradient"
+        }}
+      />
+      <div>{content}</div>
     </Layout>
   );
 };

@@ -1,0 +1,6 @@
+@media screen and (max-width: 1024px) {
+  .artdirected {
+    height: 100vh;
+    object-fit: contain
+  }
+}

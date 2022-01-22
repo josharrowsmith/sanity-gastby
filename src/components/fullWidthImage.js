@@ -1,27 +1,25 @@
 import React from "react";
 import clientConfig from "../../client-config";
 import { getGatsbyImageData } from "gatsby-source-sanity";
-import { GatsbyImage, withArtDirection, getImage } from "gatsby-plugin-image";
-import * as styles from "./hero.module.css";
+import { GatsbyImage, withArtDirection } from 'gatsby-plugin-image';
+import * as styles from "./fullWidthImage.module.css";
 
 
 const getSanityImages = (props) => {
   let img = null;
-  if (props.desktopImage && props.mobileImage) {
+  if (props.backgroundImage && props.backgroundImageMobile) {
     const desktopImage = getGatsbyImageData(
-      props.desktopImage.asset,
+      props.backgroundImage.asset,
       {
-        layout: 'fullWidth',
-        maxWidth: 2000
+        layout: 'constrained',
       },
       clientConfig.sanity
     );
 
     const mobileImage = getGatsbyImageData(
-      props.mobileImage.asset,
+      props.backgroundImageMobile.asset,
       {
-        layout: 'fullWidth',
-        maxWidth: 1024
+        layout: 'constrained',
       },
       clientConfig.sanity
     );
@@ -37,19 +35,19 @@ const getSanityImages = (props) => {
       <GatsbyImage
         image={images}
         className={styles.artdirected}
-        alt={props.alt}
       />
     );
   }
   return img;
 };
 
-function Hero(props) {
+
+const imageGrid = (props) => {
   const img = getSanityImages(props);
 
   return (
-    <div className="relative">{img}</div>
+    <div className="container mx-auto w-auto bg-contain bg-center">{img}</div>
   );
 }
 
-export default Hero;
+export default imageGrid;
