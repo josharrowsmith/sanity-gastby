@@ -1,10 +1,13 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   theme: {
+    flex: {
+      three: "0 0 33%"
+    },
     screens: {
-      'ss': {'max': '767px'},
-      ...defaultTheme.screens,
+      ss: { max: "767px" },
+      ...defaultTheme.screens
     },
     extend: {}
   },

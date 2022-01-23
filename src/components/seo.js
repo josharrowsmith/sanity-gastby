@@ -2,10 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
-import { imageUrlFor } from "../lib/image-url";
-import { buildImageObj } from "../lib/helpers";
-
-// https://ogp.me
+import { imageUrlFor, buildImageObj } from "../lib/image-url";
 
 function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradient }) {
   return (

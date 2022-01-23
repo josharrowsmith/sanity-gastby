@@ -1,11 +1,11 @@
 import React from "react";
 import Hero from "../components/hero";
-import CTA from "../components/cta";
-import CTAColumns from "../components/cta-columns";
-import ImageGrid from "../components/imageGrid"
+import ImageGrid from "../components/imageGrid";
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
 import FullWidthImage from "../components/fullWidthImage";
+import Stores from "../components/stores";
+import Socials from "../components/socials";
 
 const Page = props => {
   const { data, errors } = props;
@@ -37,17 +37,17 @@ const Page = props => {
         case "hero":
           el = <Hero key={c._key} {...c} />;
           break;
-        case "cta":
-          el = <CTA key={c._key} {...c} />;
-          break;
-        case "ctaColumns":
-          el = <CTAColumns key={c._key} {...c} />;
-          break;
         case "imageGrid":
           el = <ImageGrid key={c._key} {...c} />;
           break;
         case "fullWidthImage":
           el = <FullWidthImage key={c._key} {...c} />;
+          break;
+        case "stores":
+          el = <Stores key={c._key} {...c} />;
+          break;
+        case "socials":
+          el = <Socials key={c._key} {...c} />;
           break;
         default:
           el = null;

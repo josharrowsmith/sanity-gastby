@@ -4,7 +4,7 @@ import Errors from "../components/errors";
 import Page from "../templates/page";
 
 export const query = graphql`
-   query FrontpageQuery {
+  query FrontpageQuery {
     page: sanityPage(_id: { regex: "/(drafts.|)frontpage/" }) {
       ...PageInfo
     }

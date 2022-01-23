@@ -13,6 +13,7 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-image",
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,6 +31,12 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd
       }
+    },
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        ...clientConfig.sanity,
+      },
     }
   ]
 };

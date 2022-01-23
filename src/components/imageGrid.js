@@ -1,12 +1,18 @@
 import React from "react";
+import { getSanityImageUrl } from "../lib/image-url";
 
 const imageGrid = ({ columns }) => {
   return (
-    <section className="container mx-auto justify-between grid grid-cols-7 ss:grid-cols-3 gap-10 ss:gap-2 py-10 ss:px-4">
-      {columns.map(i =>
-        <div className="bg-black w-auto h-32 ss:h-32 bg-contain bg-center" style={{ backgroundImage: `url(${i.asset.url})` }}></div>)}
+    <section className="container mx-auto pt-10 ss:px-4 grid lg:grid-flow-col ss:grid-cols-3 justify-between gap-3">
+      {columns.map(i => {
+        return (
+          <div className="homeStandard">
+            <img src={getSanityImageUrl(i.asset.url, 200)} className="rounded-md" style={{ height: "100%" }} />
+          </div>
+        );
+      })}
     </section>
   );
-}
+};
 
 export default imageGrid;
