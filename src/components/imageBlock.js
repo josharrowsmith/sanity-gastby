@@ -7,7 +7,7 @@ const imageBlock = ({ columns, styles, _type, size }) => {
   const { width } = useWindowSize();
 
   return (
-    <section className={classnames("container mx-auto pt-10 ss:px-4 grid ", styles)}>
+    <section className={classnames("container relative mx-auto pt-10 ss:px-4 grid ", styles)}>
       {columns.map(i => {
         if (i.disabled && width < 767) return;
         return (
@@ -20,11 +20,8 @@ const imageBlock = ({ columns, styles, _type, size }) => {
           >
             <img
               src={getSanityImageUrl(i.image.asset.url, size)}
-              className={classnames("h-full")}
+              className={classnames("h-full self-start")}
               alt="stuff"
-              style={{
-                height: "intrinsic"
-              }}
             />
           </a>
         );
