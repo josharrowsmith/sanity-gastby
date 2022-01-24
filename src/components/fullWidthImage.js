@@ -31,7 +31,7 @@ const getSanityImages = props => {
     ]);
 
     img = (
-      <GatsbyImage image={images} className={styles.artdirected} style={{ display: "block" }} />
+      <GatsbyImage image={images} alt="stuff" className={styles.artdirected} style={{ display: "block" }} />
     );
   }
   return img;

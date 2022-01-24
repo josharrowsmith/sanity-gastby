@@ -1,11 +1,14 @@
 import React from "react";
 import Hero from "../components/hero";
-import ImageGrid from "../components/imageGrid";
+import ImageBlock from "../components/imageBlock";
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
 import FullWidthImage from "../components/fullWidthImage";
-import Stores from "../components/stores";
-import Socials from "../components/socials";
+
+
+const storeCss = 'lg:grid-cols-3 grid-rows-1 ss:grid-cols-2 justify-between gap-3'
+const imageGridCss = 'lg:grid-flow-col ss:grid-cols-3 justify-between gap-3 rounded-md'
+const socialsCss = 'grid-flow-col auto-cols-max gap-10 justify-center'
 
 const Page = props => {
   const { data, errors } = props;
@@ -38,16 +41,16 @@ const Page = props => {
           el = <Hero key={c._key} {...c} />;
           break;
         case "imageGrid":
-          el = <ImageGrid key={c._key} {...c} />;
+          el = <ImageBlock key={c._key} {...c} styles={imageGridCss} size={300} />;
           break;
         case "fullWidthImage":
           el = <FullWidthImage key={c._key} {...c} />;
           break;
         case "stores":
-          el = <Stores key={c._key} {...c} />;
+          el = <ImageBlock key={c._key} {...c} styles={storeCss} size={600} />;
           break;
         case "socials":
-          el = <Socials key={c._key} {...c} />;
+          el = <ImageBlock key={c._key} {...c} styles={socialsCss} size={30} />;
           break;
         default:
           el = null;

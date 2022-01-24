@@ -1,7 +1,8 @@
 import React from "react";
 import clientConfig from "../../client-config";
 import { getGatsbyImageData } from "gatsby-source-sanity";
-import { GatsbyImage, withArtDirection, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, withArtDirection } from "gatsby-plugin-image";
+import useWindowSize from "../hooks/useGatsbyWindowSize"
 import classnames from "classnames";
 import * as styles from "./hero.module.css";
 
@@ -38,7 +39,7 @@ const getSanityImages = props => {
         image={images}
         loading="lazy"
         className={classnames("imageWrapper", styles.artdirected)}
-        alt={props.alt}
+        alt={"stuff"}
       />
     );
   }
@@ -46,6 +47,7 @@ const getSanityImages = props => {
 };
 
 function Hero(props) {
+  const { height, width } = useWindowSize()
   const img = getSanityImages(props);
 
   return <div className="relative">{img}</div>;

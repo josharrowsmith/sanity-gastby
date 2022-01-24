@@ -7,11 +7,10 @@ export function imageUrlFor(source) {
   return builder.image(source);
 }
 
-export const getSanityImageUrl = (image, width, height) =>
+export const getSanityImageUrl = (image, width) =>
   imageUrlFor(image)
     .auto("format")
     .width(width)
-    .height(height)
     .url();
 
 export function buildImageObj(source = { asset: {} }) {
