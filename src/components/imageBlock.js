@@ -7,7 +7,7 @@ const imageBlock = ({ columns, styles, _type, size }) => {
   const { width } = useWindowSize();
 
   return (
-    <section className={classnames("container relative mx-auto pt-10 ss:px-4 grid ", styles)}>
+    <section style={{ gridAutoRows: "250px" }} className={classnames("container relative mx-auto pt-10 ss:px-4 grid ", styles)}>
       {columns.map(i => {
         if (i.disabled && width < 767) return;
         return (
