@@ -1,4 +1,5 @@
 import clientConfig from "../../client-config";
+import { getGatsbyImageData } from "gatsby-source-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
 const builder = imageUrlBuilder(clientConfig.sanity);
@@ -22,4 +23,18 @@ export function buildImageObj(source = { asset: {} }) {
   if (source.hotspot) imageObj.hotspot = source.hotspot;
 
   return imageObj;
+}
+
+export function getSanityImages(props, size, layout) {
+  if (props) {
+    const imageData = getGatsbyImageData(
+      props.asset,
+      {
+        layout: layout,
+        width: size
+      },
+      clientConfig.sanity
+    );
+    return imageData;
+  }
 }
