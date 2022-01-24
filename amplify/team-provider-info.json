@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sanitygastby-dev-200626-authRole",
+      "UnauthRoleArn": "arn:aws:iam::940594808240:role/amplify-sanitygastby-dev-200626-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::940594808240:role/amplify-sanitygastby-dev-200626-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-sanitygastby-dev-200626-deployment",
+      "UnauthRoleName": "amplify-sanitygastby-dev-200626-unauthRole",
+      "StackName": "amplify-sanitygastby-dev-200626",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:940594808240:stack/amplify-sanitygastby-dev-200626/4eb9c3d0-7cfd-11ec-984d-0608b1028fb2",
+      "AmplifyAppId": "d1dqslws5cspti"
+    }
+  }
+}
