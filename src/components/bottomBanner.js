@@ -2,13 +2,12 @@ import React from "react";
 import clientConfig from "../../client-config";
 import { getGatsbyImageData } from "gatsby-source-sanity";
 import { GatsbyImage, withArtDirection } from "gatsby-plugin-image";
-import * as styles from "./fullWidthImage.module.css";
 
 const getSanityImages = props => {
   let img = null;
-  if (props.backgroundImage && props.backgroundImageMobile) {
+  if (props.desktopImage && props.mobileImage) {
     const desktopImage = getGatsbyImageData(
-      props.backgroundImage.asset,
+      props.desktopImage.asset,
       {
         layout: "constrained"
       },
@@ -16,7 +15,7 @@ const getSanityImages = props => {
     );
 
     const mobileImage = getGatsbyImageData(
-      props.backgroundImageMobile.asset,
+      props.mobileImage.asset,
       {
         layout: "constrained"
       },
@@ -31,7 +30,7 @@ const getSanityImages = props => {
     ]);
 
     img = (
-      <GatsbyImage image={images} alt="stuff" className={styles.artdirected} style={{ display: "block" }} />
+      <GatsbyImage image={images} alt="stuff" className="botttomBanner" style={{ display: "block" }} />
     );
   }
   return img;

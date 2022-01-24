@@ -10,7 +10,7 @@ const imageBlock = ({ columns, styles, _type, size }) => {
     <section className={classnames("container mx-auto pt-10 ss:px-4 grid ", styles)}>
       {columns.map(i => {
         return (
-          <a key={i} a href={i.cta ? i.cta.link : undefined} target="_blank" className={_type}>
+          <a key={_type.id} a href={i.cta ? i.cta.link : undefined} target="_blank" className={_type}>
             <img src={getSanityImageUrl(i.image.asset.url, size)} className={classnames("h-full")} alt="stuff" />
           </a>
         );

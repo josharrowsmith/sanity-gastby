@@ -1,10 +1,10 @@
 import React from "react";
-import GraphQLErrorList from "../components/graphql-error-list";
+import GraphQLErrors from "../components/graphqlErrors";
 import Layout from "../containers/layout";
 
 const Errors = ({ errors }) => (
   <Layout>
-    <GraphQLErrorList errors={errors} />
+    <GraphQLErrors errors={errors} />
   </Layout>
 );
 

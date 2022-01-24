@@ -4,7 +4,6 @@ import { getGatsbyImageData } from "gatsby-source-sanity";
 import { GatsbyImage, withArtDirection } from "gatsby-plugin-image";
 import useWindowSize from "../hooks/useGatsbyWindowSize"
 import classnames from "classnames";
-import * as styles from "./hero.module.css";
 
 const getSanityImages = props => {
   let img = null;
@@ -38,7 +37,7 @@ const getSanityImages = props => {
       <GatsbyImage
         image={images}
         loading="lazy"
-        className={classnames("imageWrapper", styles.artdirected)}
+        className={classnames("imageWrapper artdirected")}
         alt={"stuff"}
       />
     );

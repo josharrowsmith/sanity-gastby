@@ -3,9 +3,9 @@ import Hero from "../components/hero";
 import ImageBlock from "../components/imageBlock";
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
-import FullWidthImage from "../components/fullWidthImage";
+import BottomBanner from "../components/bottomBanner";
 
-
+// so i can reuse same component (ImageBlock) with different data
 const storeCss = 'lg:grid-cols-3 grid-rows-1 ss:grid-cols-2 justify-between gap-3'
 const imageGridCss = 'lg:grid-flow-col ss:grid-cols-3 justify-between gap-3 rounded-md'
 const socialsCss = 'grid-flow-col auto-cols-max gap-10 justify-center'
@@ -43,8 +43,8 @@ const Page = props => {
         case "imageGrid":
           el = <ImageBlock key={c._key} {...c} styles={imageGridCss} size={300} />;
           break;
-        case "fullWidthImage":
-          el = <FullWidthImage key={c._key} {...c} />;
+        case "bottomBanner":
+          el = <BottomBanner key={c._key} {...c} />;
           break;
         case "stores":
           el = <ImageBlock key={c._key} {...c} styles={storeCss} size={600} />;

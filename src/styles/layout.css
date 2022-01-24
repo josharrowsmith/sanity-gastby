@@ -28,7 +28,16 @@
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 767px) {
+  .artdirected {
+    background-position: 50% 50%;
+    padding-bottom: 150% !important;
+  }
+
+  .botttomBanner {
+    padding-bottom: 70% !important;
+  }
+
   .stores:last-child:not(:nth-child(odd)) {
     display: grid;
   }
