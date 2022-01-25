@@ -7,7 +7,7 @@ import BottomBanner from "../components/bottomBanner";
 
 // so i can reuse same component (ImageBlock) with different data
 const storeCss = "lg:grid-cols-3 grid-rows-1 ss:grid-cols-2 justify-between gap-3";
-const imageGridCss = "lg:grid-flow-col ss:grid-cols-3 justify-between gap-3 rounded-md auto-rows-fr";
+const imageGridCss = "lg:grid-flow-col ss:grid-cols-3 justify-between gap-3 rounded-md";
 const socialsCss = "grid-flow-col auto-cols-max gap-10 justify-center";
 
 const Page = props => {
