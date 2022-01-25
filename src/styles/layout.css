@@ -32,4 +32,9 @@
   .botttomBanner {
     padding-bottom: 70% !important;
   }
+
+  /* issues with ios where height: 100% doenst work in grid */
+  .imageGrid > img {
+    max-height: 130px;
+  }
 }
