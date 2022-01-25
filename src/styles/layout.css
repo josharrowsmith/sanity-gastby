@@ -37,4 +37,10 @@
   .imageGrid > img {
     max-height: 130px;
   }
+  .stores > img {
+    max-height: 150px;
+  }
+  .socials > img {
+    max-height: 30px;
+  }
 }
