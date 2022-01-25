@@ -33,7 +33,7 @@
     padding-bottom: 70% !important;
   }
 
-  /* issues with ios where height: 100% doenst work in grid */
+  /* issues with ios where height: 100% doenst work in grid on old devices */
   .imageGrid > img {
     max-height: 130px;
   }

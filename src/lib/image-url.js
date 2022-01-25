@@ -25,6 +25,7 @@ export function buildImageObj(source = { asset: {} }) {
   return imageObj;
 }
 
+// becuase we are using raw fields (page builder) we cant use graphql directily
 export function getSanityImages(props, size, layout) {
   if (props) {
     const imageData = getGatsbyImageData(

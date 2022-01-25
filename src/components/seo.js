@@ -15,7 +15,7 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
         const metaImage =
           image && image.asset
             ? imageUrlFor(buildImageObj(image))
-                .width(1200)
+                .width(200)
                 .url()
             : "";
 
