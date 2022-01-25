@@ -7,9 +7,9 @@ const imageBlock = ({ columns, styles, _type, size }) => {
   const { width } = useWindowSize();
 
   return (
-    <section className={classnames("container relative mx-auto pt-10 ss:px-4 grid ", styles)}>
+    <section className={classnames("container relative mx-auto pt-5 ss:px-4 grid ", styles)}>
       {columns.map(i => {
-        if (i.disabled && width < 767) return;
+        if (i.disabled && width > 767) return;
         return (
           <a
             key={_type.id}

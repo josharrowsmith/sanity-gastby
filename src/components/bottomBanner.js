@@ -14,7 +14,7 @@ const bottomBanner = props => {
   ]);
 
   return (
-    <div className="container mt-10 mx-auto w-auto bg-contain bg-center imageWrapper">
+    <div className="container mt-5 mx-auto w-auto bg-contain bg-center imageWrapper">
       <GatsbyImage
         image={data}
         alt="stuff"
