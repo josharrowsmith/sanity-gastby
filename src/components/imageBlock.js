@@ -19,7 +19,7 @@ const imageBlock = ({ columns, styles, _type, size }) => {
           >
             <img
               src={getSanityImageUrl(i.image.asset.url, size)}
-              className={classnames("min-h-full")}
+              className={classnames("min-h-full h-auto")}
               alt="stuff"
             />
           </a>

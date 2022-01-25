@@ -5,6 +5,7 @@ import { getSanityImages } from "../lib/image-url";
 const bottomBanner = props => {
   const desktopImage = getSanityImages(props.desktopImage, null, "constrained");
   const mobileImage = getSanityImages(props.mobileImage, null, "constrained");
+
   const data = withArtDirection(desktopImage, [
     {
       media: "(max-width: 767px)",
